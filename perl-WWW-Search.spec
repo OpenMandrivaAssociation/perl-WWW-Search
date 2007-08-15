@@ -1,6 +1,6 @@
 %define module  WWW-Search
 %define name    perl-%{module}
-%define version 2.494
+%define version 2.495
 %define release %mkrel 1
 
 Name:       %{name}
@@ -11,7 +11,6 @@ Summary:    Virtual base class for WWW searches
 Group:      Development/Perl
 URL:        http://search.cpan.org/dist/%{module}
 Source:     http://www.cpan.org/modules/by-module/WWW/%{module}-%{version}.tar.bz2
-Patch:       WWW-Search-2.494-fix-tests.patch
 %if %{mdkversion} < 1010
 BuildRequires:  perl-devel
 %endif
@@ -37,7 +36,6 @@ avoid overloading either the client or the server.
 
 %prep
 %setup -q -n %{module}-%{version} 
-%patch0 -p 1
 for file in `find lib -type f` Changes README; do
     chmod 644 $file
 done
