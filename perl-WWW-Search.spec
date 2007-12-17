@@ -22,7 +22,6 @@ BuildRequires:  perl(Test::Inline) >= 0.16
 BuildRequires:  perl(LWP::UserAgent)
 BuildRequires:  perl(CGI)
 BuildArch:  noarch
-BuildRoot:  %{_tmppath}/%{name}-%{version}
 
 %description
 This class is the parent for all access methods supported by the WWW::Search
