@@ -11,9 +11,6 @@ Summary:    Virtual base class for WWW searches
 Group:      Development/Perl
 URL:        http://search.cpan.org/dist/%{module}
 Source:     http://www.cpan.org/modules/by-module/WWW/%{module}-%{version}.tar.bz2
-%if %{mdkversion} < 1010
-BuildRequires:  perl-devel
-%endif
 BuildRequires:  perl(Date::Manip)
 BuildRequires:  perl(HTML::Tree)
 BuildRequires:  perl(IO::Capture) >= 0.05
@@ -46,6 +43,7 @@ perl -pi -e 's|/usr/local/bin/perl|/usr/bin/perl|' lib/WWW/Search/*.pm
 %make
 
 %check
+export PATH=$PATH:%{buildroot}%{_bindir}
 %{__make} test
 
 %install
