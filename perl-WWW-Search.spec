@@ -1,26 +1,27 @@
-%define module  WWW-Search
-%define name    perl-%{module}
-%define version 2.507
-%define release %mkrel 2
+%define upstream_name    WWW-Search
+%define upstream_version 2.508
 
-Name:       %{name}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:    Virtual base class for WWW searches
+License:    GPL+ or Artistic
 Group:      Development/Perl
-URL:        http://search.cpan.org/dist/%{module}
-Source:     http://www.cpan.org/modules/by-module/WWW/%{module}-%{version}.tar.bz2
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/WWW/%{upstream_name}-%{upstream_version}.tar.gz
+
+BuildRequires:  perl(Bit::Vector)
+BuildRequires:  perl(CGI)
 BuildRequires:  perl(Date::Manip)
 BuildRequires:  perl(HTML::Tree)
 BuildRequires:  perl(IO::Capture) >= 0.05
+BuildRequires:  perl(LWP::UserAgent)
 BuildRequires:  perl(Test::File)
 BuildRequires:  perl(Test::Inline) >= 0.16
-BuildRequires:  perl(LWP::UserAgent)
-BuildRequires:  perl(CGI)
-BuildRequires:  perl(Bit::Vector)
+
 BuildArch:  noarch
-BuildRoot:  %{_tmppath}/%{name}-%{version}
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This class is the parent for all access methods supported by the WWW::Search
@@ -33,7 +34,7 @@ Search results can be limited, and there is a pause between each request to
 avoid overloading either the client or the server.
 
 %prep
-%setup -q -n %{module}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version} 
 for file in `find lib -type f` Changes README; do
     chmod 644 $file
 done
@@ -60,4 +61,3 @@ rm -rf %{buildroot}
 %{_bindir}/*
 %{perl_vendorlib}/WWW
 %{_mandir}/*/*
-
