@@ -1,15 +1,15 @@
 %define upstream_name    WWW-Search
-%define upstream_version 2.508
+%define upstream_version 2.513
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	2
+Release:	1
 
 Summary:	Virtual base class for WWW searches
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/WWW/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/WWW/WWW-Search-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(Bit::Vector)
@@ -152,4 +152,5 @@ export PATH=$PATH:%{buildroot}%{_bindir}
 
 * Thu Jul 14 2005 Oden Eriksson <oeriksson@mandriva.com> 2.476-1mdk
 - initial Mandriva package
+
 
