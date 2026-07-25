@@ -1,15 +1,15 @@
 %define upstream_name    WWW-Search
-%define upstream_version 2.513
+%define upstream_version 2.517
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	Virtual base class for WWW searches
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/WWW/WWW-Search-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/dist/WWW-Search
+Source0:	https://cpan.metacpan.org/authors/id/M/MT/MTHURN/WWW-Search-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
