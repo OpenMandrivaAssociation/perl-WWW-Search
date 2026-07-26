@@ -1,15 +1,13 @@
 %define upstream_name    WWW-Search
-%define upstream_version 2.517
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	2.517
+Release:	2
 
 Summary:	Virtual base class for WWW searches
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/WWW-Search
-Source0:	https://cpan.metacpan.org/authors/id/M/MT/MTHURN/WWW-Search-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/M/MT/MTHURN/WWW-Search-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -35,7 +33,7 @@ Search results can be limited, and there is a pause between each request to
 avoid overloading either the client or the server.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version} 
+%setup -q -n %{upstream_name}-%{version} 
 for file in `find lib -type f` Changes README; do
     chmod 644 $file
 done
